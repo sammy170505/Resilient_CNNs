@@ -62,7 +62,7 @@ def evaluate_model(model, dataset):
     return accuracy
 
 def main():
-    model_path = "/Users/courtneymoane/Desktop/research_project/trained_models/cifar_model.keras"  
+    model_path = "trained_models/cifar_model.keras"  
     
     img_height = 32
     img_width = 32
@@ -117,7 +117,10 @@ def main():
     plt.ylabel("Accuracy")
     plt.title("Model Accuracy vs. Bit Flip Percentage for Layer Conv2d")
     plt.grid(True)
-    plt.savefig("figures/conv2d 0-0.1.png")
+
+    os.makedirs("figures", exist_ok=True)
+
+    plt.savefig("figures/conv2d_0-0.1.png")
     plt.show()
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import PIL
 import tensorflow as tf
+import os
 
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -136,5 +137,11 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
 
+# Create the folder if it doesn't exist
+os.makedirs('trained_models', exist_ok=True)
+
+print("Saving model to 'trained_models/cifar_model.keras'...")
+
+# Save the model
 model.save('trained_models/cifar_model.keras')
 
