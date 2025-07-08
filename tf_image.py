@@ -91,11 +91,11 @@ num_classes = len(class_names)
 
 model = Sequential([
     layers.Rescaling(1./255, input_shape=(img_height, img_width, 3)),
-    layers.Conv2D(16, 3, padding='same', activation='relu'),
+    layers.Conv2D(16, 3, padding='same', activation='relu'), # First convolutional layer with 16 filters
     layers.MaxPooling2D(),
-    layers.Conv2D(32, 3, padding='same', activation='relu'),
+    layers.Conv2D(32, 3, padding='same', activation='relu'), # Second convolutional layer with 32 filters
     layers.MaxPooling2D(),
-    layers.Conv2D(64, 3, padding='same', activation='relu'),
+    layers.Conv2D(64, 3, padding='same', activation='relu'), # Third convolutional layer with 64 filters
     layers.MaxPooling2D(),
     layers.Flatten(),
     layers.Dense(128, activation='relu'),
