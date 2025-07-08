@@ -87,7 +87,7 @@ plt.title('MobileNetV2 Training and Validation Loss')
 plt.savefig('figures/mobilenetv2_cifar10_history.png')
 
 # Save trained model
-model_path = 'trained_models/mobilenetv2_cifar10.keras'
+model_path = 'trained_models/mobilenetv2_cifar10.h5'
 print(f"Saving model to '{model_path}'...")
 model.save(model_path)
 
